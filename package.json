@@ -1,0 +1,52 @@
+{
+  "name": "@ethosagent/tools-scaffold",
+  "version": "0.0.0",
+  "description": "Scaffold template for building @ethosagent/tools-* packages",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "tools-scaffold": "./dist/cli.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "npm@10.8.1",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "check": "npm run typecheck && npm run lint && npm run test",
+    "prepublishOnly": "npm run check && npm run build"
+  },
+  "peerDependencies": {
+    "@ethosagent/types": ">=0.4.0"
+  },
+  "peerDependenciesMeta": {
+    "@ethosagent/types": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^6.0.0",
+    "vitest": "^4.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "Mitesh Sharma",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiteshSharma/tools-scaffold"
+  }
+}
