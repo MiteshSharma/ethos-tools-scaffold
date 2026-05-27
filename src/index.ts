@@ -1,1 +1,1 @@
-export { createTools } from './tools';
+export { activate, createTools } from './tools';

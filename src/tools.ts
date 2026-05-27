@@ -53,6 +53,12 @@ const scaffoldHello: Tool<HelloArgs> = {
   },
 };
 
+export function activate(api: { registerTool(tool: unknown): void }): void {
+  for (const tool of createTools()) {
+    api.registerTool(tool);
+  }
+}
+
 export function createTools(): Tool[] {
   return [scaffoldHello];
 }
