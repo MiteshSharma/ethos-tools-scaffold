@@ -23,15 +23,18 @@
     "prepublishOnly": "npm run check && npm run build"
   },
   "peerDependencies": {
-    "@ethosagent/types": ">=0.4.0"
+    "@ethosagent/plugin-sdk": ">=0.4.0"
   },
   "peerDependenciesMeta": {
-    "@ethosagent/types": {
+    "@ethosagent/plugin-sdk": {
       "optional": true
     }
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.0",
+    "@ethosagent/core": "file:../ethos/packages/core",
+    "@ethosagent/plugin-sdk": "file:../ethos/packages/plugin-sdk",
+    "@ethosagent/types": "file:../ethos/packages/types",
     "@types/node": "^22.0.0",
     "tsup": "^8.0.0",
     "typescript": "^6.0.0",
@@ -39,6 +42,7 @@
   },
   "files": [
     "dist",
+    "skills",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
@@ -50,6 +54,12 @@
     "url": "https://github.com/MiteshSharma/tools-scaffold"
   },
   "ethos": {
-    "type": "plugin"
+    "type": "plugin",
+    "id": "ethos-tools-scaffold",
+    "pluginContractMajor": 2,
+    "skills_dir": "skills",
+    "priority": 0,
+    "dependencies": [],
+    "credentials": []
   }
 }

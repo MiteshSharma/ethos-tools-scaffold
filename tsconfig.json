@@ -8,12 +8,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "outDir": "./dist",
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "types": ["node"]
+    "noEmit": true,
+    "declaration": false,
+    "types": ["node"],
+    "typeRoots": ["./typings", "./node_modules/@types"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "typings/**/*"],
   "exclude": ["node_modules", "dist"]
 }
